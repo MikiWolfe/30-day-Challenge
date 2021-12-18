@@ -13,6 +13,9 @@
 // console.log(randomOrder)
 // }
 // random()
+const btn = document.getElementById("btn")
+btn.addEventListener('click', getActivity)
+let activity = document.getElementById("activity")
 
 const url = "https://www.boredapi.com/api/activity"
 function getActivity(){
@@ -23,8 +26,7 @@ fetch(url)
 })
 .then((data) => {
     console.log(data)
+    activity.innerHTML= data.activity
 }
 )}
 // getActivity()
-const btn = document.getElementById("btn")
-btn.addEventListener('click', getActivity)
